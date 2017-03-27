@@ -8,7 +8,6 @@ module Data.Path
   ) where
 
 import Prelude
-
 import Data.Maybe (Maybe(..))
 
 data Path
@@ -59,3 +58,6 @@ ls _ = []
 size :: Path -> Maybe Int
 size (File _ bytes) = Just bytes
 size _ = Nothing
+
+instance eqPath :: Eq Path where
+    eq a b = filename a == filename b
